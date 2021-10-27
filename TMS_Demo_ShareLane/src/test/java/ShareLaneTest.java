@@ -15,7 +15,7 @@ public class ShareLaneTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-       System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+       WebDriverManager.chromedriver().setup();
         //Open browser
         driver = new ChromeDriver();
         driver.manage().window().maximize();
