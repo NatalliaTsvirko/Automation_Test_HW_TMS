@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+body {
+    background: url(https://www.oum.ru/upload/iblock/ae9/ae9ca4622eec4f724c199279dbf3bbc3.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+     }
+h1,h2,p,a{
+    color: #D2691E;
+     }
+table, th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color: #000000;
+    box-shadow: 0 0 5px #BDB76B;
+    color: #D2691E;
+}
+th, td {
+    background-color:  #000000;
+}
+label{
+    color : #D2691E;
+}
+input,option,button{
+    background-color:  #000000;
+    color: #D2691E;
+}
+img{
+    border: 3px solid #D2B48C;
+    border-radius: 70px;
+    box-shadow: 0 0 20px #BDB76B;
+    width: 400px;
+    height: 250px;
+}
+    </style>
+</head>
+<body>
+<h1 align="center">Happy Halloween</h1><br><br>
+<table style="width:50%" , align="center">
+    <tr>
+        <th>Person</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Witch</td>
+        <td>Teodora</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>Pumpkin</td>
+        <td>Jack</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Scull</td>
+        <td>Ludwig</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td>Black cat</td>
+        <td>Lucifer</td>
+        <td>50</td>
+    </tr>
+</table>
+<br><br>
+<form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value=""><br>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="email">Enter your email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<form>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label>
+</form>
+<br>
+<h2>The select element</h2>
+<form action="/action_page.php">
+    <label for="person">Choose a person:</label>
+    <select name="person" id="person">
+        <option value="witch">Witch</option>
+        <option value="pumpkin">Pumpkin</option>
+        <option value="scull">Scull</option>
+        <option value="black cat">Black cat</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<button type="button">Click Me!</button>
+<br>
+<img src="https://www.shkolazhizni.ru/img/content/i134/134084_or.jpg">
+<p>Happy viewing.</p><br>
+<a href="https://www.youtube.com/watch?v=t0KIwh6JtXw" >The addams family</a>
+</body>
+</html>
