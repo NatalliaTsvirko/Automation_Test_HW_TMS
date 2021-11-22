@@ -1,6 +1,5 @@
 package test.herokuappTests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,17 +21,14 @@ public class DynamicControlsTest extends HerokuBaseTest {
     @Test
     public void checkboxNoOnPage() {
         dynamicControlsPage.checkboxNot();
-        dynamicControlsPage.waitUntilElementVisible(DynamicControlsPage.WAIT_TEXT_CHECKBOX);
-        int numberOfElements = driver.findElements(By.cssSelector("input[type='checkbox']")).size();
-        assertEquals(numberOfElements, 0, "Element on page");
+        dynamicControlsPage.waitUntilWaitTextboxTextVisible();
+        assertEquals(dynamicControlsPage.getCheckboxCount(), 0, "Element on page");
     }
 
     @Test
     public void enableInput() {
-        dynamicControlsPage.findInput();
         dynamicControlsPage.clickButtonEnable();
-        dynamicControlsPage.waitUntilElementVisible(DynamicControlsPage.WAIT_TEXT_INPUT_ENABLE);
-        dynamicControlsPage.verifyInputDisabled();
-        Assert.assertTrue(dynamicControlsPage.verifyInputDisabled(),"is Enable");
+        dynamicControlsPage.waitUntilElementVisible();
+        Assert.assertTrue(dynamicControlsPage.isInputEnabled());
     }
 }

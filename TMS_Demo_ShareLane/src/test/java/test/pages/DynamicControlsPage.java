@@ -8,9 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DynamicControlsPage extends BasePage {
 
-    public static final By WAIT_TEXT_CHECKBOX = By.cssSelector("p[id='message']");
-    public static final By WAIT_TEXT_INPUT_ENABLE = By.xpath("//button[@onclick='swapInput()']/following-sibling::p");
     public static final By CHECKBOX = By.cssSelector("input[type='checkbox']");
+    private static final By WAIT_TEXT_CHECKBOX = By.cssSelector("p[id='message']");
+    private static final By WAIT_TEXT_INPUT_ENABLE = By.xpath("//button[@onclick='swapInput()']/following-sibling::p");
     private static final String DYNAMIC_CONTROL_URL = "http://the-internet.herokuapp.com/dynamic_controls";
     private static final By REMOVE_BUTTON = By.cssSelector("button[onclick='swapCheckbox()']");
     private static final By INPUT_FIELD = By.cssSelector("input[type='text']");
@@ -29,22 +29,29 @@ public class DynamicControlsPage extends BasePage {
 
     }
 
-    public void waitUntilElementVisible(By locator) {
+    public int getCheckboxCount() {
+        int numberOfElements = driver.findElements(CHECKBOX).size();
+        return numberOfElements;
+    }
+
+    public void waitUntilWaitTextboxTextVisible() {
         WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(WAIT_TEXT_CHECKBOX));
+
     }
 
-    public void findInput() {
+    public void waitUntilElementVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(WAIT_TEXT_INPUT_ENABLE));
+    }
+
+    public void clickButtonEnable() {
         driver.get(DYNAMIC_CONTROL_URL);
-        driver.findElement(INPUT_FIELD);
-
-    }
-    public void clickButtonEnable(){
         driver.findElement(ENABLE_BUTTON).click();
     }
 
-    public boolean verifyInputDisabled() {
-        driver.findElement(INPUT_FIELD).isEnabled();
-        return true;
+    public boolean isInputEnabled() {
+        return driver.findElement(INPUT_FIELD).isEnabled();
+
     }
 }
